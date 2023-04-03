@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import AppNavbar from './AppNavBar';
 import Home from './Home';
+import UserList from './UserList'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 /*function App() {
@@ -26,7 +27,19 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
   );
 }*/
 
-function App() {
+function App () {
+  return (
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Home/>}/>
+        <Route path='/users' exact={true} element={<UserList/>}/>
+      </Routes>
+    </Router>
+  )
+}
+
+
+/*function App() {
 
   const [cvs, setCVs] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -61,6 +74,6 @@ function App() {
       </header>
     </div>
   );
-}
+}*/
 
 export default App;
